@@ -2,7 +2,7 @@ import Section from "../components/Section";
 
 function Problema() {
   return (
-    <section id="problema" className="section">
+    <section id="problema" className="section section-dark">
   <h2>Problema</h2>
 
   <p>

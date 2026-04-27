@@ -10,7 +10,14 @@ export default function Pesquisa() {
         sua relação com educação financeira e investimentos, identificando
         comportamentos, barreiras e motivações.
       </p>
-
+      <a 
+    href="https://docs.google.com/forms/d/1IHvv8Ri42Gk6NMQ0YBAra_MwYvdrhwke-Q20W_BkN94/edit"
+    target="_blank"
+    rel="noreferrer"
+    className="form-link"
+    >
+  🔗 Acessar formulário completo
+</a>
       <div className="card">
         <h3>Contato com educação financeira</h3>
 

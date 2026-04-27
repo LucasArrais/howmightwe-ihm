@@ -1,8 +1,8 @@
 function Hero() {
   return (
-    <section className="hero">
+    <section id="hero" className="hero">
       <h1>
-        (nomedoaplicativoseila)
+        InvesteJa
       </h1>
 
       <p>
