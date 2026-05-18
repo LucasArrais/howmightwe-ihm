@@ -1,7 +1,20 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import PesquisaPage from "./pages/PesquisaPage";
+import MercadoPage from "./pages/MercadoPage";
+import Navbar from "./components/Navbar";
 
 function App() {
-  return <Home />;
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/pesquisa" element={<PesquisaPage />} />
+        <Route path="/mercado" element={<MercadoPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
