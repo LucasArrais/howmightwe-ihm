@@ -114,7 +114,6 @@ function Cenarios() {
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "30px", padding: "30px" }}>
-              {/* História */}
               <div>
                 <h4 style={{ color: "#4f46e5", marginBottom: "15px", fontSize: "18px" }}>A Jornada</h4>
                 <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
@@ -126,7 +125,6 @@ function Cenarios() {
                 </div>
               </div>
 
-              {/* Pontos Problemáticos */}
               <div>
                 <h4 style={{ color: "#e11d48", marginBottom: "15px", fontSize: "18px" }}>Pontos Problemáticos</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>

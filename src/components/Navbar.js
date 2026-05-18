@@ -25,6 +25,12 @@ function Navbar() {
         Cenários-Problema
       </Link>
       <Link 
+        to="/modelo-tarefas" 
+        className={location.pathname === '/modelo-tarefas' ? 'active-link' : ''}
+      >
+        Modelo de Tarefas
+      </Link>
+      <Link 
         to="/mercado" 
         className={location.pathname === '/mercado' ? 'active-link' : ''}
       >
