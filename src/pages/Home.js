@@ -9,36 +9,37 @@ import Mercado from "../sections/Mercado";
 import Referencias from "../sections/Referencias";
 import Oportunidade from "../sections/Oportunidade";
 import Solucao from "../sections/Solucao";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
 import Metodologia from "../sections/Metodologia";
 import Empatia from "../sections/Empatia";
 import TLCE from "../sections/TLCE";
 import Entrevistas from "../sections/Entrevistas";
+import MobilePrototype from "../components/MobilePrototype";
 
 function Home() {
   return (
     <>
       <SidebarNav />
-<Header />
-<Hero />
+      <Header />
+      <Hero />
 
-<Problema />
-<Pesquisa />
-<Metodologia />
-<Entrevistas/>
-<Empatia />
-<TLCE />
+      <Problema />
+      <Pesquisa />
+      <Metodologia />
+      <Entrevistas />
+      <Empatia />
+      <TLCE />
 
-<Insights />
-<CSD />
-<Mercado />
-<Referencias />
-<Oportunidade />
-<Solucao />
-
-<Footer />
+      <Insights />
+      <CSD />
+      <Mercado />
+      <Referencias />
+      <Oportunidade />
+      <Solucao />
+      <MobilePrototype />
+      <Footer />
     </>
   );
 }
-
 export default Home;
+
