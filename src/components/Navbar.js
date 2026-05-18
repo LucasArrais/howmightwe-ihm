@@ -19,6 +19,12 @@ function Navbar() {
         Pesquisa
       </Link>
       <Link 
+        to="/cenarios" 
+        className={location.pathname === '/cenarios' ? 'active-link' : ''}
+      >
+        Cenários-Problema
+      </Link>
+      <Link 
         to="/mercado" 
         className={location.pathname === '/mercado' ? 'active-link' : ''}
       >
