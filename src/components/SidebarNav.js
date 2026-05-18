@@ -13,7 +13,9 @@ const sections = [
   { id: "mercado", label: "Mercado" },
   { id: "referencias", label: "Referências" },
   { id: "oportunidade", label: "Oportunidade" },
-  { id: "solucao", label: "Solução" }
+  { id: "solucao", label: "Solução" },
+  { id: "prototipo", label: "Protótipo"},
+    
 ];
 
 function SidebarNav() {
@@ -37,6 +39,10 @@ function SidebarNav() {
           }
         }
       });
+
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 10) {
+        current = sections[sections.length - 1].id;
+      }
 
       setActive(current);
     };
