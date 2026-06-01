@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import PesquisaPage from "./pages/PesquisaPage";
-import MercadoPage from "./pages/MercadoPage";
-import CenariosPage from "./pages/CenariosPage";
-import ModeloTarefasPage from "./pages/ModeloTarefasPage";
+import IdeacaoPage from "./pages/IdeacaoPage";
+import HowMightWePage from "./pages/HowMightWePage";
+import MapaEmpatiaPage from "./pages/MapaEmpatiaPage";
+import QuestionarioPage from "./pages/QuestionarioPage";
+import EntrevistasPage from "./pages/EntrevistasPage";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -12,10 +13,14 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/pesquisa" element={<PesquisaPage />} />
-        <Route path="/cenarios" element={<CenariosPage />} />
-        <Route path="/modelo-tarefas" element={<ModeloTarefasPage />} />
-        <Route path="/mercado" element={<MercadoPage />} />
+        
+        {/* Rotas de Imersão */}
+        <Route path="/imersao/how-might-we" element={<HowMightWePage />} />
+        <Route path="/imersao/mapa-empatia" element={<MapaEmpatiaPage />} />
+        <Route path="/imersao/questionario" element={<QuestionarioPage />} />
+        <Route path="/imersao/entrevistas" element={<EntrevistasPage />} />
+
+        <Route path="/ideacao" element={<IdeacaoPage />} />
       </Routes>
     </Router>
   );
