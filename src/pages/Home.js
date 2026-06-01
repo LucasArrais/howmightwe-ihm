@@ -1,4 +1,3 @@
-import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Overview from "../sections/Overview";
 import Problema from "../sections/Problema";
@@ -8,7 +7,6 @@ import Footer from "../components/Footer";
 function Home() {
   return (
     <>
-      <Header />
       <Hero />
       <Overview />
       <Problema />

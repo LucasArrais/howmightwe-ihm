@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import Header from "../components/Header";
 import Personas from "../sections/Personas";
 import Cenarios from "../sections/Cenarios";
 import ModeloTarefas from "../sections/ModeloTarefas";
@@ -22,7 +21,6 @@ function IdeacaoPage() {
 
   return (
     <>
-      <Header />
       <Personas />
       <Cenarios />
       <ModeloTarefas />

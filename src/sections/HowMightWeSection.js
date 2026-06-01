@@ -1,9 +1,8 @@
-import Section from "../components/Section";
 import Card from "../components/Card";
 
 function HowMightWeSection() {
   return (
-    <Section id="hmw" title="O Desafio">
+    <section id="hmw" className="section">
       <Card>
         <div style={{ textAlign: "center", padding: "40px 20px" }}>
           <span style={{ fontSize: "50px", display: "block", marginBottom: "20px" }}>🎯</span>
@@ -15,7 +14,7 @@ function HowMightWeSection() {
           </p>
         </div>
       </Card>
-    </Section>
+    </section>
   );
 }
 

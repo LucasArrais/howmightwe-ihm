@@ -1,4 +1,3 @@
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import HowMightWeSection from "../sections/HowMightWeSection";
 import Insights from "../sections/Insights";
@@ -10,7 +9,6 @@ import Oportunidade from "../sections/Oportunidade";
 function HowMightWePage() {
   return (
     <>
-      <Header />
       <HowMightWeSection />
       <Insights />
       <CSD />
