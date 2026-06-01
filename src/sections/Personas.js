@@ -92,8 +92,10 @@ function Personas() {
             position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh",
             backgroundColor: "rgba(15, 23, 42, 0.8)", backdropFilter: "blur(8px)",
             display: "flex", justifyContent: "center", alignItems: "center",
-            zIndex: 9999, padding: "20px", boxSizing: "border-box"
+            zIndex: 9999, padding: "20px", boxSizing: "border-box",
+            cursor: "pointer"
           }}
+          title="Clique fora para fechar"
         >
           <div 
             onClick={(e) => e.stopPropagation()} 
@@ -101,7 +103,8 @@ function Personas() {
               backgroundColor: "white", padding: "40px", borderRadius: "24px",
               maxWidth: "800px", width: "100%", maxHeight: "90vh", overflowY: "auto",
               position: "relative", display: "flex", flexDirection: "column",
-              alignItems: "center", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
+              alignItems: "center", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
+              cursor: "default"
             }}
           >
             <button 

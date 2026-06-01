@@ -133,7 +133,7 @@ function ModeloTarefas() {
                 </button>
               </div>
 
-              <div style={{ border: "1px solid #e2e8f0", borderRadius: "16px", width: "100%", overflow: "hidden", backgroundColor: "#f8fafc", cursor: "grab", boxShadow: "inset 0 2px 10px rgba(0,0,0,0.02)" }}>
+              <div className="zoom-container">
                 <TransformComponent wrapperStyle={{ width: "100%", height: "600px" }}>
                   <div style={{ width: "100%", minWidth: "800px", padding: "40px" }}>
                     <Mermaid chart={htaChart} />
