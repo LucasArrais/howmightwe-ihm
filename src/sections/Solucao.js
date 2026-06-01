@@ -1,26 +1,51 @@
-import Section from "../components/Section";
-import Card from "../components/Card";
+const pillars = [
+  {
+    icon: "🎯",
+    title: "Metas Visuais",
+    desc: "Objetivos com progresso visual e significado pessoal, para que o usuário veja seu avanço de forma clara e motivadora.",
+    color: "#6366f1",
+  },
+  {
+    icon: "🎮",
+    title: "Gamificação",
+    desc: "Sistema de recompensas, conquistas e evolução de nível que transforma hábitos financeiros em uma jornada engajante.",
+    color: "#0ea5e9",
+  },
+  {
+    icon: "⚡",
+    title: "Micro Aprendizado",
+    desc: "Conteúdo financeiro entregue em doses curtas e no momento certo, reduzindo a barreira de entrada para iniciantes.",
+    color: "#8b5cf6",
+  },
+];
 
 function Solucao() {
   return (
-    <Section id="solucao" title="Conceito de Solução">
-      <div className="grid-3">
-        <Card>
-          <h3> Metas Visuais</h3>
-          <p>Objetivos com progresso e significado pessoal.</p>
-        </Card>
+    <section id="solucao" className="solucao-section">
+      <div className="solucao-label">Nossa Proposta</div>
+      <h2 className="solucao-title">Conceito de Solução</h2>
+      <p className="solucao-subtitle">
+        O InvesteJá combina três pilares para transformar o aprendizado
+        financeiro em uma experiência contínua e motivadora.
+      </p>
 
-        <Card>
-          <h3> Gamificação</h3>
-          <p>Sistema de recompensas e evolução.</p>
-        </Card>
-
-        <Card>
-          <h3> Micro aprendizado</h3>
-          <p>Conteúdo no momento certo.</p>
-        </Card>
+      <div className="solucao-grid">
+        {pillars.map((p) => (
+          <div key={p.title} className="solucao-card">
+            <div
+              className="solucao-icon"
+              style={{ background: `${p.color}18`, color: p.color }}
+            >
+              {p.icon}
+            </div>
+            <h3 className="solucao-card-title" style={{ color: p.color }}>
+              {p.title}
+            </h3>
+            <p className="solucao-card-desc">{p.desc}</p>
+          </div>
+        ))}
       </div>
-    </Section>
+    </section>
   );
 }
 

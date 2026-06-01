@@ -1,19 +1,38 @@
+import { Link } from "react-router-dom";
+
 function Hero() {
   return (
     <section id="hero" className="hero">
-      <h1>
-        InvesteJa
+      <div className="hero-eyebrow">Portfólio de UX/UI Design · IHM 2026</div>
+
+      <h1 className="hero-title">
+        <span className="hero-title-highlight">InvesteJá</span>
       </h1>
 
-      <p>
-        Um aplicativo que transforma educação financeira
-        em uma experiência simples, motivadora e contínua.
+      <p className="hero-subtitle">
+        Como poderíamos ajudar jovens adultos a desenvolver hábitos de
+        investimento de forma <em>descomplicada</em>, <em>acessível</em> e <em>motivadora</em>?
       </p>
 
       <div className="hero-tags">
-        <span>Consistência</span>
-        <span>Gamificação</span>
-        <span>Educação Financeira</span>
+        <span>🎮 Gamificação</span>
+        <span>📚 Educação Financeira</span>
+        <span>🎯 Consistência</span>
+        <span>🚀 UX Research</span>
+      </div>
+
+      <div className="hero-cta-group">
+        <Link to="/imersao/how-might-we" className="hero-cta-primary">
+          Ver o Desafio ↓
+        </Link>
+        <Link to="/ideacao" className="hero-cta-secondary">
+          Ver Protótipo
+        </Link>
+      </div>
+
+      <div className="hero-scroll-hint">
+        <span>Role para explorar</span>
+        <div className="hero-scroll-arrow" />
       </div>
     </section>
   );
