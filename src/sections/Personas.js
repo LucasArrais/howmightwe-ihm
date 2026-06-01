@@ -5,17 +5,17 @@ const personas = [
   {
     name: "Camila",
     image: "/images/personas/camila.png",
-    description: "Jovem recém-formada que deseja organizar suas finanças mas acha o tema muito complexo."
+    description: ""
   },
   {
     name: "Juliana",
     image: "/images/personas/juliana.png",
-    description: "Trabalhadora autônoma que busca formas de poupar dinheiro para emergências."
+    description: ""
   },
   {
     name: "Rafael",
     image: "/images/personas/rafael.jpg",
-    description: "Estudante universitário que quer começar a investir com pouco dinheiro."
+    description: ""
   }
 ];
 
@@ -100,40 +100,44 @@ function Personas() {
           <div 
             onClick={(e) => e.stopPropagation()} 
             style={{
-              backgroundColor: "white", padding: "40px", borderRadius: "24px",
-              maxWidth: "800px", width: "100%", maxHeight: "90vh", overflowY: "auto",
+              backgroundColor: "transparent", padding: 0,
+              maxWidth: "1000px", width: "95%", maxHeight: "95vh",
               position: "relative", display: "flex", flexDirection: "column",
-              alignItems: "center", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
-              cursor: "default"
+              alignItems: "center", cursor: "default"
             }}
           >
             <button 
               onClick={() => setSelectedPersona(null)}
               style={{
-                position: "absolute", top: "20px", right: "20px",
-                background: "#f1f5f9", border: "none", width: "40px", height: "40px",
+                position: "absolute", top: "16px", right: "16px",
+                background: "rgba(15, 23, 42, 0.6)", border: "none", width: "40px", height: "40px",
                 borderRadius: "50%", fontSize: "24px", cursor: "pointer",
-                color: "#64748b", display: "flex", justifyContent: "center", alignItems: "center",
-                transition: "background 0.2s"
+                color: "white", display: "flex", justifyContent: "center", alignItems: "center",
+                transition: "background 0.2s", zIndex: 10, backdropFilter: "blur(4px)"
               }}
-              onMouseEnter={(e) => e.currentTarget.style.background = '#e2e8f0'}
-              onMouseLeave={(e) => e.currentTarget.style.background = '#f1f5f9'}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(15, 23, 42, 0.9)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(15, 23, 42, 0.6)'}
               title="Fechar"
             >
               &times;
             </button>
-            <h2 style={{ color: "#0f172a", fontSize: "32px", marginBottom: "30px" }}>{selectedPersona.name}</h2>
             <img 
               src={selectedPersona.image} 
               alt={selectedPersona.name} 
               style={{ 
-                maxWidth: "100%", maxHeight: "50vh", objectFit: "contain", 
-                borderRadius: "16px", backgroundColor: "#f8fafc"
+                maxWidth: "100%", maxHeight: "90vh", width: "auto", height: "auto",
+                objectFit: "contain", display: "block",
+                borderRadius: "16px",
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
               }} 
             />
-            <p style={{ textAlign: "center", color: "#334155", fontSize: "20px", marginTop: "30px", maxWidth: "600px", lineHeight: "1.6" }}>
-              {selectedPersona.description}
-            </p>
+            {selectedPersona.description && (
+              <div style={{ backgroundColor: "white", width: "100%", maxWidth: "900px", borderRadius: "16px", marginTop: "16px", boxShadow: "0 10px 25px rgba(0,0,0,0.2)" }}>
+                <p style={{ textAlign: "center", color: "#334155", fontSize: "22px", padding: "32px", margin: 0, lineHeight: "1.6" }}>
+                  {selectedPersona.description}
+                </p>
+              </div>
+            )}
           </div>
         </div>
       )}
