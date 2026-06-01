@@ -6,6 +6,7 @@ import Cenarios from "../sections/Cenarios";
 import ModeloTarefas from "../sections/ModeloTarefas";
 import Crazy4 from "../sections/Crazy4";
 import MobilePrototype from "../components/MobilePrototype";
+import UsoIA from "../sections/UsoIA";
 import Footer from "../components/Footer";
 
 function IdeacaoPage() {
@@ -32,6 +33,7 @@ function IdeacaoPage() {
       <ModeloTarefas />
       <Crazy4 />
       <MobilePrototype />
+      <UsoIA />
       <Footer />
     </>
   );
