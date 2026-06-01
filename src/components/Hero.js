@@ -22,10 +22,7 @@ function Hero() {
       </div>
 
       <div className="hero-cta-group">
-        <Link to="/imersao/how-might-we" className="hero-cta-primary">
-          Ver o Desafio ↓
-        </Link>
-        <Link to="/ideacao" className="hero-cta-secondary">
+        <Link to="/ideacao#prototipo" className="hero-cta-primary">
           Ver Protótipo
         </Link>
       </div>

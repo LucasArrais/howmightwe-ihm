@@ -5,7 +5,7 @@ function Footer() {
         <div className="footer-brand">
           <span className="footer-logo">InvesteJá</span>
           <p className="footer-tagline">
-            Portfólio de UX/UI Design · Interação Humano-Máquina 2026
+            Portfólio de UX/UI Design · Interface Homem-Máquina 2026
           </p>
         </div>
 
