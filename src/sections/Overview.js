@@ -43,7 +43,7 @@ function Overview() {
         <h2 className="overview-title">Etapas do Projeto</h2>
         <p className="overview-desc">
           Este portfólio documenta todo o processo de UX/UI Design do{" "}
-          <strong>InvesteJá</strong> — da compreensão do problema até a
+          <strong>InvesteJá</strong>, da compreensão do problema até a
           ideação do protótipo final.
         </p>
       </div>

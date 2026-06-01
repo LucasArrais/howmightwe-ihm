@@ -47,7 +47,7 @@ function Questionario() {
             style={{ width: "100%", borderRadius: "8px", marginTop: "15px", marginBottom: "15px" }}
           />
           <div className="card-insight">
-            <h3>Usuários não são iniciantes — estão no meio do caminho</h3>
+            <h3>Usuários não são iniciantes, estão no meio do caminho</h3>
             <p>
               A maioria das pessoas já teve algum contato com educação financeira,
               mas não avançou para uma prática consistente. Isso mostra que o

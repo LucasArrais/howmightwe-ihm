@@ -8,7 +8,7 @@ function Oportunidade() {
         <p className="oportunidade-text">
           Existe uma oportunidade clara de unir a{" "}
           <strong>simplicidade das fintechs</strong> com o{" "}
-          <strong>engajamento de plataformas gamificadas</strong> — criando uma
+          <strong>engajamento de plataformas gamificadas</strong>, criando uma
           experiência financeira que seja ao mesmo tempo acessível, motivadora e
           contínua.
         </p>
