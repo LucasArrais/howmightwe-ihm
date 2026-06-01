@@ -15,10 +15,9 @@ function Hero() {
       </p>
 
       <div className="hero-tags">
-        <span>🎮 Gamificação</span>
-        <span>📚 Educação Financeira</span>
-        <span>🎯 Consistência</span>
-        <span>🚀 UX Research</span>
+        <span> Gamificação</span>
+        <span> Educação Financeira</span>
+        <span> Consistência</span>
       </div>
 
       <div className="hero-cta-group">
