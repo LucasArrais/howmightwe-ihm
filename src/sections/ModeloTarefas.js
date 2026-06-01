@@ -84,16 +84,19 @@ function ModeloTarefas() {
       <div 
         style={{ 
           backgroundColor: 'white', 
-          padding: '20px', 
-          borderRadius: '20px', 
-          boxShadow: '0 15px 40px rgba(0,0,0,0.06)', 
+          padding: '40px', 
+          borderRadius: '24px', 
+          boxShadow: '0 20px 40px rgba(0,0,0,0.05)',
+          border: '1px solid rgba(0,0,0,0.05)',
           marginTop: '20px'
         }}
       >
-        <p style={{ textAlign: "center", color: "#64748b", marginBottom: "20px" }}>
-          Representação visual de como os usuários atingem seus objetivos no sistema. <br />
-          <strong>Dica:</strong> Use o scroll do mouse ou pinça para dar zoom, e clique e arraste para mover.
-        </p>
+        <div style={{ textAlign: "center", marginBottom: "30px", padding: "20px", background: "#f8fafc", borderRadius: "16px" }}>
+          <p style={{ color: "#334155", margin: 0, fontSize: "16px", lineHeight: "1.6" }}>
+            Representação visual de como os usuários atingem seus objetivos no sistema.<br />
+            <span style={{ color: "#4f46e5", fontWeight: "600" }}>💡 Dica:</span> Use o scroll do mouse ou pinça para dar zoom, e clique e arraste para mover o diagrama.
+          </p>
+        </div>
 
         <TransformWrapper
           initialScale={1}
@@ -103,30 +106,34 @@ function ModeloTarefas() {
         >
           {({ zoomIn, zoomOut, resetTransform }) => (
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-              {/* Controles de Zoom */}
-              <div style={{ display: "flex", gap: "10px", marginBottom: "15px" }}>
+              <div style={{ display: "flex", gap: "12px", marginBottom: "20px" }}>
                 <button 
                   onClick={() => zoomIn()} 
-                  style={{ padding: "8px 16px", backgroundColor: "#4f46e5", color: "white", border: "none", borderRadius: "8px", cursor: "pointer", fontWeight: "bold" }}
+                  style={{ padding: "10px 20px", backgroundColor: "#4f46e5", color: "white", border: "none", borderRadius: "100px", cursor: "pointer", fontWeight: "600", fontSize: "14px", transition: "transform 0.2s", boxShadow: "0 4px 12px rgba(79,70,229,0.3)" }}
+                  onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'none'}
                 >
-                  Zoom +
+                  ➕ Zoom
                 </button>
                 <button 
                   onClick={() => zoomOut()} 
-                  style={{ padding: "8px 16px", backgroundColor: "#4f46e5", color: "white", border: "none", borderRadius: "8px", cursor: "pointer", fontWeight: "bold" }}
+                  style={{ padding: "10px 20px", backgroundColor: "#4f46e5", color: "white", border: "none", borderRadius: "100px", cursor: "pointer", fontWeight: "600", fontSize: "14px", transition: "transform 0.2s", boxShadow: "0 4px 12px rgba(79,70,229,0.3)" }}
+                  onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'none'}
                 >
-                  Zoom -
+                  ➖ Reduzir
                 </button>
                 <button 
                   onClick={() => resetTransform()} 
-                  style={{ padding: "8px 16px", backgroundColor: "#e2e8f0", color: "#334155", border: "none", borderRadius: "8px", cursor: "pointer", fontWeight: "bold" }}
+                  style={{ padding: "10px 20px", backgroundColor: "#f1f5f9", color: "#334155", border: "1px solid #e2e8f0", borderRadius: "100px", cursor: "pointer", fontWeight: "600", fontSize: "14px", transition: "background 0.2s" }}
+                  onMouseEnter={(e) => e.currentTarget.style.background = '#e2e8f0'}
+                  onMouseLeave={(e) => e.currentTarget.style.background = '#f1f5f9'}
                 >
-                  Resetar
+                  🔄 Resetar
                 </button>
               </div>
 
-              {/* Área Interativa do Diagrama */}
-              <div style={{ border: "2px dashed #cbd5e1", borderRadius: "12px", width: "100%", overflow: "hidden", backgroundColor: "#f8fafc", cursor: "grab" }}>
+              <div style={{ border: "1px solid #e2e8f0", borderRadius: "16px", width: "100%", overflow: "hidden", backgroundColor: "#f8fafc", cursor: "grab", boxShadow: "inset 0 2px 10px rgba(0,0,0,0.02)" }}>
                 <TransformComponent wrapperStyle={{ width: "100%", height: "600px" }}>
                   <div style={{ width: "100%", minWidth: "800px", padding: "40px" }}>
                     <Mermaid chart={htaChart} />

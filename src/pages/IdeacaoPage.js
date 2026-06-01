@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import PageBanner from "../components/PageBanner";
 import Personas from "../sections/Personas";
 import Cenarios from "../sections/Cenarios";
 import ModeloTarefas from "../sections/ModeloTarefas";
@@ -21,6 +22,11 @@ function IdeacaoPage() {
 
   return (
     <>
+      <PageBanner
+        eyebrow="Ideação"
+        title="Da Pesquisa ao Protótipo"
+        description="Personas, cenários, modelo de tarefas, esboços e protótipo funcional"
+      />
       <Personas />
       <Cenarios />
       <ModeloTarefas />

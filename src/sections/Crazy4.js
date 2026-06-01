@@ -6,17 +6,34 @@ function Crazy4() {
       <div 
         style={{ 
           textAlign: "center", 
-          padding: "60px", 
-          backgroundColor: "white", 
-          borderRadius: "20px", 
-          boxShadow: "0 15px 40px rgba(0,0,0,0.06)",
-          border: "2px dashed #cbd5e1"
+          padding: "80px 40px", 
+          background: "linear-gradient(135deg, #f8fafc, #f1f5f9)", 
+          borderRadius: "24px", 
+          boxShadow: "inset 0 2px 10px rgba(0,0,0,0.02)",
+          border: "2px dashed #cbd5e1",
+          maxWidth: "800px",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center"
         }}
       >
-        <span style={{ fontSize: "40px" }}>✏️</span>
-        <h3 style={{ color: "#0f172a", marginTop: "15px" }}>Esboços do Crazy 4</h3>
-        <p style={{ color: "#64748b", fontSize: "16px", marginTop: "10px" }}>
-          Os desenhos e ideias gerados na dinâmica do Crazy 4 serão adicionados aqui em breve.
+        <div style={{
+          width: "80px",
+          height: "80px",
+          background: "white",
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          boxShadow: "0 10px 25px rgba(0,0,0,0.05)",
+          marginBottom: "24px"
+        }}>
+          <span style={{ fontSize: "40px" }}>✏️</span>
+        </div>
+        <h3 style={{ color: "#0f172a", fontSize: "28px", margin: "0 0 12px 0", fontWeight: "800" }}>Esboços do Crazy 4</h3>
+        <p style={{ color: "#475569", fontSize: "18px", margin: 0, lineHeight: "1.6", maxWidth: "500px" }}>
+          Os desenhos e ideias gerados na dinâmica de ideação rápida (Crazy 4) serão adicionados aqui em breve.
         </p>
       </div>
     </Section>

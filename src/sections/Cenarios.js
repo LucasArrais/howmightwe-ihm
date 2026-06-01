@@ -70,20 +70,20 @@ function Cenarios() {
               display: "flex", 
               flexDirection: "column",
               backgroundColor: "white", 
-              borderRadius: "20px", 
+              borderRadius: "24px", 
               overflow: "hidden",
-              boxShadow: "0 15px 40px rgba(0,0,0,0.06)",
-              border: "1px solid #e2e8f0"
+              boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
+              border: "1px solid rgba(0,0,0,0.05)"
             }}
           >
             {/* Header do Cenário */}
             <div style={{ 
-              backgroundColor: "#0f172a", 
+              background: "linear-gradient(135deg, #0f172a, #1e1b4b)", 
               color: "white", 
-              padding: "20px 30px",
+              padding: "30px 40px",
               display: "flex",
               alignItems: "center",
-              gap: "20px"
+              gap: "24px"
             }}>
               <div style={{
                 width: "80px",
@@ -91,34 +91,33 @@ function Cenarios() {
                 borderRadius: "50%",
                 backgroundColor: "#f8fafc",
                 overflow: "hidden",
-                border: "3px solid #4f46e5",
+                border: "4px solid #6366f1",
                 flexShrink: 0,
                 display: "flex",
                 justifyContent: "center",
-                alignItems: "center"
+                alignItems: "center",
+                boxShadow: "0 0 20px rgba(99,102,241,0.4)"
               }}>
                 <img 
                   src={cenario.image} 
                   alt={cenario.actor} 
-                  style={{ 
-                    width: "100%", 
-                    height: "100%", 
-                    objectFit: "cover"
-                  }} 
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }} 
                 />
               </div>
               <div>
-                <h3 style={{ margin: 0, fontSize: "24px", color: "#f8fafc" }}>{cenario.title}</h3>
-                <p style={{ margin: "5px 0 0 0", color: "#94a3b8", fontSize: "14px" }}><strong>Ator:</strong> {cenario.actor}</p>
+                <h3 style={{ margin: 0, fontSize: "28px", color: "white", fontWeight: "800" }}>{cenario.title}</h3>
+                <p style={{ margin: "8px 0 0 0", color: "#a5b4fc", fontSize: "16px", fontWeight: "500" }}><strong>Ator:</strong> {cenario.actor}</p>
               </div>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "30px", padding: "30px" }}>
-              <div>
-                <h4 style={{ color: "#4f46e5", marginBottom: "15px", fontSize: "18px" }}>A Jornada</h4>
-                <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "40px", padding: "40px" }}>
+              <div style={{ background: "#f8fafc", padding: "30px", borderRadius: "16px", border: "1px solid #e2e8f0" }}>
+                <h4 style={{ color: "#4f46e5", marginBottom: "20px", fontSize: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+                  <span style={{ fontSize: "24px" }}>🗺️</span> A Jornada
+                </h4>
+                <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                   {cenario.story.map((paragraph, idx) => (
-                    <p key={idx} style={{ color: "#334155", lineHeight: "1.7", margin: 0 }}>
+                    <p key={idx} style={{ color: "#334155", lineHeight: "1.7", margin: 0, fontSize: "16px" }}>
                       {paragraph}
                     </p>
                   ))}
@@ -126,25 +125,27 @@ function Cenarios() {
               </div>
 
               <div>
-                <h4 style={{ color: "#e11d48", marginBottom: "15px", fontSize: "18px" }}>Pontos Problemáticos</h4>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
+                <h4 style={{ color: "#e11d48", marginBottom: "20px", fontSize: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+                  <span style={{ fontSize: "24px" }}>⚠️</span> Pontos Problemáticos
+                </h4>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
                   {cenario.painPoints.map((point, idx) => (
                     <li 
                       key={idx} 
                       style={{ 
                         backgroundColor: "#fff1f2", 
                         color: "#be123c", 
-                        padding: "12px 15px", 
-                        borderRadius: "8px",
-                        fontSize: "14px",
-                        fontWeight: "500",
+                        padding: "16px", 
+                        borderRadius: "12px",
+                        fontSize: "15px",
+                        fontWeight: "600",
                         display: "flex",
-                        alignItems: "flex-start",
-                        gap: "10px",
-                        borderLeft: "4px solid #f43f5e"
+                        alignItems: "center",
+                        gap: "12px",
+                        border: "1px solid #fecdd3"
                       }}
                     >
-                      <span style={{ fontSize: "16px", marginTop: "-2px" }}>⚠️</span>
+                      <span style={{ display: "inline-block", width: "8px", height: "8px", backgroundColor: "#f43f5e", borderRadius: "50%" }} />
                       {point}
                     </li>
                   ))}

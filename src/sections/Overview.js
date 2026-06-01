@@ -5,7 +5,7 @@ const steps = [
     emoji: "🔍",
     label: "Imersão",
     description:
-      "Entrevistas qualitativas, questionário com 50 participantes, mapa de empatia e descobertas sobre a relação dos jovens com o dinheiro.",
+      "Entrevistas qualitativas, questionário com mais de 50 participantes, mapa de empatia e descobertas sobre a relação dos jovens com o dinheiro.",
     links: [
       { to: "/imersao/how-might-we", label: "How Might We" },
       { to: "/imersao/questionario", label: "Questionário" },
@@ -29,7 +29,7 @@ const steps = [
     label: "How Might We",
     description:
       "O desafio central do projeto, matriz CSD, análise de mercado, referências visuais e oportunidades identificadas.",
-    links: [{ to: "/imersao/how-might-we", label: "Ver Desafio" }],
+    links: [{ to: "/imersao/how-might-we", label: "Ver How Might We" }],
     color: "#8b5cf6",
     bg: "linear-gradient(135deg, #faf5ff, #ede9fe)",
   },
