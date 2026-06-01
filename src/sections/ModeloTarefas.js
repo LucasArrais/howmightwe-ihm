@@ -4,78 +4,109 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 const htaChart = `
 graph TD
-    %% Estilos idênticos ao exemplo clássico de HTA
-    classDef box fill:#ffffff,stroke:#000000,stroke-width:1.5px,color:#000000,font-size:14px;
-    classDef plan fill:transparent,stroke:transparent,color:#000000,font-size:13px,font-style:italic;
+    %% Ajuste de paleta baseado no Quick Reference Guide para consistência visual e acessibilidade
+    classDef system fill:#E0F2FE,stroke:#0284C7,stroke-width:2px,color:#0F172A;
+    classDef user fill:#DCFCE7,stroke:#10B981,stroke-width:2px,color:#064E3B;
+    classDef decision fill:#F3E8FF,stroke:#A855F7,stroke-width:2px,color:#4C1D95;
+    classDef error fill:#FEE2E2,stroke:#EF4444,stroke-width:2px,color:#7F1D1D;
 
-    %% Nível 0
-    T0["0. Gerenciar Aprendizado e Simulações"]:::box
-    P0["Plano 0: Fazer 1 ou 4 livremente; ou 2 seguido de 3"]:::plan
-    
-    T0 --- P0
+    Start((Início: Abrir App)) --> AuthCheck{Usuário logado?}:::decision
 
-    %% Nível 1
-    T1["1. Consultar Home"]:::box
-    T2["2. Realizar Trilha"]:::box
-    T3["3. Executar Simulação"]:::box
-    T4["4. Consultar Perfil"]:::box
+    AuthCheck -- Não --> Login[Realizar Login / Cadastro]:::user --> OnboardingCheck
+    AuthCheck -- Sim --> OnboardingCheck{Concluiu Onboarding?}:::decision
 
-    P0 --- T1
-    P0 --- T2
-    P0 --- T3
-    P0 --- T4
+    %% Fluxo de Onboarding (Obrigatório no 1º acesso)
+    OnboardingCheck -- Não --> OB1[Informar Renda Atual]:::user
+    OB1 --> OB2[Definir Objetivo Principal]:::user
+    OB2 --> OB3[Informar Nível de Conhecimento]:::user
+    OB3 --> SysSaveProfile[Sistema: Salvar Perfil e Sinalizar Onboarding Completo]:::system
+    SysSaveProfile --> Dashboard[Acessar Dashboard Principal]:::user
 
-    %% Sub-árvore 1
-    P1["Plano 1: Fazer 1.1 e 1.2. (1.3 opcional)"]:::plan
-    T1 --- P1
-    
-    T1_1["1.1 Ver status"]:::box
-    T1_2["1.2 Ler dica"]:::box
-    T1_3["1.3 Atalho Simulação"]:::box
-    
-    P1 --- T1_1
-    P1 --- T1_2
-    P1 --- T1_3
+    OnboardingCheck -- Sim --> Dashboard
 
-    %% Sub-árvore 2
-    P2["Plano 2: Fazer 2.1 >> 2.2 >> 2.3"]:::plan
-    T2 --- P2
-    
-    T2_1["2.1 Selecionar módulo"]:::box
-    T2_2["2.2 Consumir conteúdo"]:::box
-    T2_3["2.3 Desbloquear ativos"]:::box
-    
-    P2 --- T2_1
-    P2 --- T2_2
-    P2 --- T2_3
+    %% Decisão Principal de Navegação
+    Dashboard --> MenuDecision{Qual funcionalidade acessar?}:::decision
 
-    %% Sub-árvore 3
-    P3["Plano 3: 3.1 >> 3.2(Opc) >> 3.3 >> 3.4. (3.5 livre). Fechar em 3.6"]:::plan
-    T3 --- P3
+    %% ==========================================
+    %% MÓDULO LEARNING (Aprendizado)
+    %% ==========================================
+    MenuDecision -- Aprender --> LearnList[Visualizar Lista de Lições]:::user
+    LearnList --> SelectLesson{Escolher Lição}:::decision
     
-    T3_1["3.1 Inserir montante"]:::box
-    T3_2["3.2 Configurar aporte"]:::box
-    T3_3["3.3 Selecionar objetivo"]:::box
-    T3_4["3.4 Ver projeção"]:::box
-    T3_5["3.5 Consultar Glossário"]:::box
-    T3_6["3.6 Salvar ou Ajustar"]:::box
+    SelectLesson -- Lição Bloqueada --> SysBlock[Sistema: Bloquear Acesso e Exibir Aviso]:::system
+    SysBlock --> LearnList
+    
+    SelectLesson -- Lição Desbloqueada --> ReadLesson[Ler Conteúdo da Lição]:::user
+    ReadLesson --> QuizOpt{Realizar Quiz de Fixação?}:::decision
+    
+    QuizOpt -- Não (Opcional) --> LearnList
+    QuizOpt -- Sim --> AnswerQuiz[Responder Pergunta do Quiz]:::user
+    AnswerQuiz --> SysEvalQuiz{Sistema: Resposta Correta?}:::decision
 
-    P3 --- T3_1
-    P3 --- T3_2
-    P3 --- T3_3
-    P3 --- T3_4
-    P3 --- T3_5
-    P3 --- T3_6
+    SysEvalQuiz -- Não --> SysToastErr[Sistema: Exibir Toast de Erro]:::error
+    SysToastErr --> RetryQuiz{Tentar Novamente?}:::decision
+    RetryQuiz -- Sim --> AnswerQuiz
+    RetryQuiz -- Não --> LearnList
 
-    %% Sub-árvore 4
-    P4["Plano 4: Fazer 4.1 ou 4.2 livremente"]:::plan
-    T4 --- P4
+    SysEvalQuiz -- Sim --> SysRewardQuiz[Sistema: +10 XP, Confetti, Desbloquear Próxima Lição]:::system
+    SysRewardQuiz --> LearnList
+
+    %% ==========================================
+    %% MÓDULO SIMULATOR (Simulador)
+    %% ==========================================
+    MenuDecision -- Simular --> SimMain[Acessar Menu do Simulador]:::user
+    SimMain --> SimType{Escolher Tipo de Simulação}:::decision
+
+    SimType -- Baseada em Objetivo --> SimGoalParams[Inserir: Valor Alvo e Prazo em Meses]:::user
+    SimGoalParams --> SysValidateGoal{Sistema: Parâmetros Válidos?}:::decision
+    SysValidateGoal -- Não --> SysErrGoal[Sistema: Alerta de Limites do Slider]:::error --> SimGoalParams
+    SysValidateGoal -- Sim --> SysCalcGoal[Sistema: Calcular Aporte Mensal Necessário]:::system
+
+    SimType -- Investimento Específico --> SimInvParams[Inserir: Valor Inicial, Aporte Mensal, Prazo, Tipo de Ativo]:::user
+    SimInvParams --> SysValidateInv{Sistema: Parâmetros Válidos?}:::decision
+    SysValidateInv -- Não --> SysErrInv[Sistema: Alerta de Limites do Slider]:::error --> SimInvParams
+    SysValidateInv -- Sim --> SysCalcInv[Sistema: Calcular Rendimento e Montante Final]:::system
+
+    SysCalcGoal --> SimResults[Visualizar Resultados e Gráficos]:::user
+    SysCalcInv --> SimResults
+
+    SimResults --> SaveSimDec{Deseja Salvar Simulação?}:::decision
+    SaveSimDec -- Não (Opcional) --> Dashboard
+    SaveSimDec -- Sim --> SysSaveSim[Sistema: +30 XP, Confetti, Salvar Perfil do Usuário]:::system
+    SysSaveSim --> Dashboard
+
+    %% ==========================================
+    %% MÓDULO PROFILE (Perfil e Acompanhamento)
+    %% ==========================================
+    MenuDecision -- Perfil --> ProfileMain[Acessar Tela de Perfil]:::user
+    ProfileMain --> ProfileAction{Escolher Ação}:::decision
+
+    ProfileAction -- Ver Configurações --> Settings[Alterar Preferências]:::user --> ProfileMain
+
+    ProfileAction -- Acompanhar Metas --> ViewSims[Visualizar Simulações Salvas]:::user
+    ViewSims --> UpdateSimDec{Atualizar Progresso de uma Meta?}:::decision
     
-    T4_1["4.1 Histórico Salvo"]:::box
-    T4_2["4.2 Perfil de Risco"]:::box
+    UpdateSimDec -- Não --> ProfileMain
+    UpdateSimDec -- Sim --> InputProgress[Inserir Valor do Novo Aporte]:::user
+    InputProgress --> SysValidateAporte{Sistema: Valor Válido e Positivo?}:::decision
     
-    P4 --- T4_1
-    P4 --- T4_2
+    SysValidateAporte -- Não --> SysErrAporte[Sistema: Exibir Erro de Validação]:::error --> InputProgress
+    SysValidateAporte -- Sim --> SysUpdateCalc[Sistema: Recalcular Progresso Geral]:::system
+    SysUpdateCalc --> SysCheckGoal{Sistema: Atingiu 100% da Meta?}:::decision
+
+    SysCheckGoal -- Não --> SysUpdateNormal[Sistema: Atualizar Barra de Progresso + Toast de Sucesso]:::system
+    SysUpdateNormal --> ProfileMain
+
+    SysCheckGoal -- Sim --> SysUpdateWin[Sistema: Confetti Especial + Conceder Badge de Conquista]:::system
+    SysUpdateWin --> ProfileMain
+
+    %% Legenda do Modelo
+    subgraph Legenda
+        L1[Ação do Usuário]:::user
+        L2[Ação do Sistema]:::system
+        L3{Decisão / Validação}:::decision
+        L4[Fluxo de Exceção / Erro]:::error
+    end
 `;
 
 function ModeloTarefas() {
