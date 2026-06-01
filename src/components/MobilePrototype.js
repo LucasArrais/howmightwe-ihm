@@ -35,7 +35,7 @@ function MobilePrototype() {
           <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
             
             <iframe
-              src="https://bear-surly-09070049.figma.site/"
+              src="https://bust-retain-94418641.figma.site/"
               style={{ 
                 width: 'calc(100% + 20px)',
                 height: '100%', 
