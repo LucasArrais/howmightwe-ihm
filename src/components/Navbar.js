@@ -45,6 +45,14 @@ function Navbar() {
       >
         Ideação
       </Link>
+
+      <Link 
+        to="/avaliacao" 
+        className={location.pathname === '/avaliacao' ? 'active-link' : ''}
+      >
+        Avaliação
+      </Link>
+
     </nav>
   );
 }

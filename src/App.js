@@ -5,6 +5,7 @@ import HowMightWePage from "./pages/HowMightWePage";
 import MapaEmpatiaPage from "./pages/MapaEmpatiaPage";
 import QuestionarioPage from "./pages/QuestionarioPage";
 import EntrevistasPage from "./pages/EntrevistasPage";
+import AvaliacaoPage from "./pages/AvaliacaoPage";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/imersao/entrevistas" element={<EntrevistasPage />} />
 
         <Route path="/ideacao" element={<IdeacaoPage />} />
+        <Route path="/avaliacao" element={<AvaliacaoPage />} />
       </Routes>
     </Router>
   );
