@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SectionHeader from "../components/SectionHeader";
 
 const steps = [
   {
@@ -38,15 +39,17 @@ const steps = [
 function Overview() {
   return (
     <section id="overview" className="overview-section">
-      <div className="overview-header">
-        <p className="overview-eyebrow">O Processo</p>
-        <h2 className="overview-title">Etapas do Projeto</h2>
-        <p className="overview-desc">
-          Este portfólio documenta todo o processo de UX/UI Design do{" "}
-          <strong>InvesteJá</strong>, da compreensão do problema, passando pela
-          ideação do protótipo, até a avaliação da interação.
-        </p>
-      </div>
+      <SectionHeader
+        eyebrow="O Processo"
+        title="Etapas do Projeto"
+        desc={
+          <>
+            Este portfólio documenta todo o processo de UX/UI Design do{" "}
+            <strong>InvesteJá</strong>, da compreensão do problema, passando pela
+            ideação do protótipo, até a avaliação da interação.
+          </>
+        }
+      />
 
       <div className="overview-grid">
         {steps.map((step) => (
@@ -54,6 +57,7 @@ function Overview() {
             key={step.label}
             className="overview-card"
             style={{ background: step.bg }}
+            data-reveal
           >
             <div className="overview-card-emoji">{step.emoji}</div>
             <h3 className="overview-card-title" style={{ color: step.color }}>

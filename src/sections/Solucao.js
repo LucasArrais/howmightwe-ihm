@@ -1,3 +1,5 @@
+import SectionHeader from "../components/SectionHeader";
+
 const pillars = [
   {
     icon: "🎯",
@@ -22,16 +24,17 @@ const pillars = [
 function Solucao() {
   return (
     <section id="solucao" className="solucao-section">
-      <div className="solucao-label">Nossa Proposta</div>
-      <h2 className="solucao-title">Conceito de Solução</h2>
-      <p className="solucao-subtitle">
-        O InvesteJá combina três pilares para transformar o aprendizado
-        financeiro em uma experiência contínua e motivadora.
-      </p>
+      <SectionHeader
+        eyebrow="Nossa Proposta"
+        title="Conceito de Solução"
+        desc="O InvesteJá combina três pilares para transformar o aprendizado financeiro em uma experiência contínua e motivadora."
+        accent="#a5b4fc"
+        theme="dark"
+      />
 
       <div className="solucao-grid">
         {pillars.map((p) => (
-          <div key={p.title} className="solucao-card">
+          <div key={p.title} className="solucao-card" data-reveal>
             <div
               className="solucao-icon"
               style={{ background: `${p.color}18`, color: p.color }}

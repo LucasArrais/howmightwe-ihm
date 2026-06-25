@@ -1,10 +1,11 @@
+import SectionHeader from "../components/SectionHeader";
+
 function Problema() {
   return (
     <section id="problema" className="problema-section">
       <div className="problema-inner">
-        <div className="problema-eyebrow">O Contexto</div>
-        <h2 className="problema-title">O Problema</h2>
-        <div className="problema-body">
+        <SectionHeader eyebrow="O Contexto" title="O Problema" accent="#f43f5e" />
+        <div className="problema-body" data-reveal>
           <p>
             Jovens adultos enfrentam dificuldades para iniciar sua jornada em
             investimentos, mesmo tendo acesso a uma grande quantidade de
@@ -20,7 +21,6 @@ function Problema() {
             aprender e a prática real de investir.
           </p>
         </div>
-
       </div>
     </section>
   );

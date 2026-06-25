@@ -1,9 +1,11 @@
+import Logo from "./Logo";
+
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-brand">
-          <span className="footer-logo">InvesteJá</span>
+          <Logo />
           <p className="footer-tagline">
             Portfólio de UX/UI Design · Interface Homem-Máquina 2026
           </p>
