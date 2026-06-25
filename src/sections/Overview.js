@@ -26,10 +26,10 @@ const steps = [
   },
   {
     emoji: "🎯",
-    label: "How Might We",
+    label: "Avaliação",
     description:
-      "O desafio central do projeto, matriz CSD, análise de mercado, referências visuais e oportunidades identificadas.",
-    links: [{ to: "/imersao/how-might-we", label: "Ver How Might We" }],
+      "Avaliação heurística do protótipo com base nas 10 heurísticas de Nielsen, classificando os problemas por gravidade e definindo prioridades de correção.",
+    links: [{ to: "/avaliacao", label: "Ver Avaliação" }],
     color: "#8b5cf6",
     bg: "linear-gradient(135deg, #faf5ff, #ede9fe)",
   },
@@ -43,8 +43,8 @@ function Overview() {
         <h2 className="overview-title">Etapas do Projeto</h2>
         <p className="overview-desc">
           Este portfólio documenta todo o processo de UX/UI Design do{" "}
-          <strong>InvesteJá</strong>, da compreensão do problema até a
-          ideação do protótipo final.
+          <strong>InvesteJá</strong>, da compreensão do problema, passando pela
+          ideação do protótipo, até a avaliação da interação.
         </p>
       </div>
 

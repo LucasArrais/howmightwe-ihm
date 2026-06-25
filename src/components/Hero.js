@@ -24,6 +24,9 @@ function Hero() {
         <Link to="/ideacao#prototipo" className="hero-cta-primary">
           Ver Protótipo
         </Link>
+        <a href="#overview" className="hero-cta-secondary">
+          Conhecer o processo
+        </a>
       </div>
 
       <div className="hero-scroll-hint">

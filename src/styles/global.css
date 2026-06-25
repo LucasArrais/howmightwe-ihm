@@ -951,3 +951,235 @@ h3 {
 .zoom-container:active {
   cursor: grabbing;
 }
+
+/* =====================
+   POLIMENTO GLOBAL
+   ===================== */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.25);
+  color: #0f172a;
+}
+
+/* Foco visível e acessível em elementos interativos */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #818cf8;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* =====================
+   FUNDOS DECORATIVOS
+   ===================== */
+/* Malha de gradientes suaves para seções escuras */
+.solucao-section,
+.oportunidade-section,
+.hmw-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.solucao-section::before,
+.oportunidade-section::before,
+.hmw-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 45% at 15% 20%, rgba(99, 102, 241, 0.22) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 50% at 85% 80%, rgba(139, 92, 246, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.solucao-section > *,
+.oportunidade-section > *,
+.hmw-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Trama de pontos sutil para seções claras */
+.overview-section,
+.problema-section {
+  position: relative;
+}
+
+.overview-section::before,
+.problema-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 0%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 0%, transparent 75%);
+  pointer-events: none;
+}
+
+.overview-section > *,
+.problema-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Banner de página com brilho decorativo */
+.page-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 60% at 20% 0%, rgba(99, 102, 241, 0.3) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 90% 100%, rgba(139, 92, 246, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.page-banner-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* =====================
+   POLIMENTO DE CARDS
+   ===================== */
+.overview-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.overview-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+}
+
+.solucao-card {
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.solucao-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(165, 180, 252, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* =====================
+   PÁGINA DE AVALIAÇÃO
+   ===================== */
+.page-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page-content .section {
+  padding: 80px 60px;
+}
+
+.aval-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.aval-card {
+  background: white;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-left: 5px solid var(--aval-color, #6366f1);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.aval-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
+}
+
+.aval-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--aval-color, #6366f1);
+  background: var(--aval-bg, rgba(99, 102, 241, 0.1));
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+}
+
+.aval-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--aval-color, #6366f1);
+}
+
+.aval-field {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.aval-field--last {
+  margin-bottom: 0;
+}
+
+.aval-field strong {
+  color: #0f172a;
+}
+
+/* Escala de gravidade harmonizada com a paleta */
+.aval-pequena {
+  --aval-color: #0ea5e9;
+  --aval-bg: rgba(14, 165, 233, 0.1);
+}
+
+.aval-media {
+  --aval-color: #f59e0b;
+  --aval-bg: rgba(245, 158, 11, 0.12);
+}
+
+.aval-grande {
+  --aval-color: #f97316;
+  --aval-bg: rgba(249, 115, 22, 0.12);
+}
+
+.aval-catastrofica {
+  --aval-color: #e11d48;
+  --aval-bg: rgba(225, 29, 72, 0.1);
+}
+
+.aval-cta-wrap {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.aval-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.aval-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.5);
+}
