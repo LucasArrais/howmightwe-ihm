@@ -1,5 +1,11 @@
 import Section from "../components/Section";
 
+const testesAplicados = [
+  { nome: "Alex", url: "https://app.useberry.com/t/E7Z1cSdH4HbUPd/" },
+  { nome: "Lucas", url: "https://app.useberry.com/t/MP98NE34BIm1fh/" },
+  { nome: "Miguel", url: "https://app.useberry.com/t/z6EcbFAxtBUWov/" },
+];
+
 const tarefas = [
   {
     nome: "Realizar uma simulação",
@@ -143,6 +149,25 @@ function FirstClick() {
             média foi <strong>4,3/7</strong>, com respostas <strong>polarizadas</strong>{" "}
             (4 deram nota de 6 a 7; 3 deram nota de 1 a 2): a proposta agrada parte do
             público, mas as barreiras de navegação ainda pesam.
+          </div>
+        </div>
+
+        <div className="fc-links" data-reveal>
+          <span className="fc-links-label">
+            Acesse os testes aplicados no Useberry:
+          </span>
+          <div className="fc-links-row">
+            {testesAplicados.map((t) => (
+              <a
+                key={t.url}
+                href={t.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="fc-link"
+              >
+                Teste de {t.nome} ↗
+              </a>
+            ))}
           </div>
         </div>
 
