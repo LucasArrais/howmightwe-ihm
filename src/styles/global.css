@@ -1164,6 +1164,173 @@ button:focus-visible {
 }
 
 /* =====================
+   TESTE DE FIRST CLICK
+   ===================== */
+.fc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.fc-card {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  background: white;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  text-align: left;
+}
+
+.fc-shots {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+
+.fc-shot {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.fc-shot img {
+  height: 210px;
+  width: auto;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.fc-shot figcaption {
+  font-size: 11px;
+  font-weight: 500;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+.fc-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.fc-task {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px;
+}
+
+.fc-enunciado {
+  font-size: 14px;
+  font-style: italic;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+
+.fc-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.fc-stat {
+  font-size: 13px;
+  color: #475569;
+  background: #eef2ff;
+  border-radius: 100px;
+  padding: 5px 12px;
+}
+
+.fc-stat strong {
+  color: #4f46e5;
+}
+
+.fc-leitura {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.fc-reco {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 28px;
+  padding: 28px 32px;
+  background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: 16px;
+  text-align: left;
+}
+
+.fc-reco-score {
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #4f46e5;
+  flex-shrink: 0;
+}
+
+.fc-reco-score span {
+  font-size: 22px;
+  font-weight: 700;
+  color: #818cf8;
+}
+
+.fc-reco-text {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.fc-reco-text strong {
+  color: #0f172a;
+}
+
+.fc-note {
+  font-size: 13px;
+  color: #94a3b8;
+  font-style: italic;
+  line-height: 1.6;
+  margin: 28px auto 0;
+  max-width: 68ch;
+}
+
+@media (max-width: 560px) {
+  .fc-reco {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 760px) {
+  .fc-card {
+    flex-direction: column;
+  }
+  .fc-shots {
+    align-self: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .fc-shot img {
+    height: 180px;
+  }
+}
+
+/* =====================
    SECTION HEADER UNIFICADO
    ===================== */
 .section-header {

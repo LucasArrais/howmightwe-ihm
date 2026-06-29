@@ -1,6 +1,7 @@
 import React from 'react';
 import PageBanner from '../components/PageBanner';
 import Section from '../components/Section';
+import FirstClick from '../sections/FirstClick';
 import Footer from '../components/Footer';
 
 const problemas = [
@@ -47,7 +48,7 @@ const AvaliacaoPage = () => {
       <PageBanner
         eyebrow="Fase 3 · Avaliação da interação"
         title="Avaliação"
-        description="Resultados da avaliação heurística do protótipo."
+        description="Resultados da avaliação heurística e do teste de primeiro clique do protótipo."
       />
 
       <main className="page-content">
@@ -121,6 +122,8 @@ const AvaliacaoPage = () => {
             </a>
           </div>
         </Section>
+
+        <FirstClick />
       </main>
 
       <Footer />
