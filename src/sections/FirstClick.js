@@ -20,7 +20,9 @@ const tarefas = [
       { img: "realizar-simulacao-c.png", cliques: 5 },
     ],
     leitura:
-      "Confiança alta (6,5/7) e bom acerto (82%): forte convergência na aba Simular. Em uma das rodadas, porém, parte dos cliques foi para Aprender, o que puxou o acerto para baixo.",
+      "A maioria foi direto à aba Simular, com confiança alta (6,5/7). A variação entre rodadas chama atenção: em duas delas o acerto foi de 100%, mas numa terceira metade dos participantes clicou em Aprender, puxando o acerto consolidado para 82%. O tempo relativamente alto (11,9s) sugere alguma deliberação antes de decidir.",
+    implicacao:
+      "Reforçar o rótulo e o ícone de Simular como ação primária reduziria a hesitação que ainda aparece em parte dos casos.",
   },
   {
     nome: "Visualizar simulações salvas",
@@ -35,7 +37,9 @@ const tarefas = [
       { img: "visualizar-simulacoes-b.png", cliques: 5 },
     ],
     leitura:
-      "A menor confiança (4,2/7) e o menor acerto (44%) andam juntos: os cliques se dividiram entre Simular e Perfil. Há dúvida real sobre onde ficam as simulações já salvas.",
+      "A tarefa mais problemática do teste: o menor acerto (44%) e a menor confiança (4,2/7), com respostas polarizadas. Os cliques se dividiram quase igualmente entre Perfil (o destino esperado) e Simular, revelando um modelo mental em que o usuário procura as simulações salvas no mesmo lugar onde as cria. O tempo alto (11,4s) reforça a hesitação.",
+    implicacao:
+      "Expor as simulações salvas dentro de Simular, ou criar um atalho visível para elas, alinharia a interface a essa expectativa.",
   },
   {
     nome: "Aprender / ver aulas",
@@ -51,7 +55,9 @@ const tarefas = [
       { img: "aprender-c.png", cliques: 6 },
     ],
     leitura:
-      "Confiança alta (6,1/7) e acerto de 94%: os cliques se concentraram no card de destaque “Continue sua jornada” e na aba Aprender. Ambos levam ao aprendizado, indicando um acesso claro ao conteúdo.",
+      "Acesso ao aprendizado bem resolvido (94% de acerto, confiança 6,1/7). Surgiram dois caminhos naturais: o card de destaque “Continue sua jornada” e a aba Aprender. Os participantes se dividiram conforme a rodada (em uma, quase todos usaram o card central; em outras, a aba inferior), e ambos levam ao conteúdo. Foi também uma das tarefas mais rápidas (5,8s).",
+    implicacao:
+      "Manter os dois pontos de entrada é positivo, desde que ambos levem ao mesmo destino de aprendizado (consistência de destino).",
   },
   {
     nome: "Visualizar perfil",
@@ -65,7 +71,9 @@ const tarefas = [
       { img: "visualizar-perfil-b.png", cliques: 5 },
     ],
     leitura:
-      "Maior confiança do teste (6,8/7) e 90% de acerto: convergência na aba Perfil. É o caminho mais intuitivo e também a tarefa mais rápida (2,3s).",
+      "A tarefa mais intuitiva: maior confiança (6,8/7), 90% de acerto e o menor tempo (2,3s). O rótulo “Perfil” corresponde diretamente à aba, e quase todos acertaram de primeira; o único desvio foi um clique isolado no meio da tela. Confiança alta e tempo baixo juntos indicam uma decisão imediata, sem dúvida.",
+    implicacao:
+      "Padrão a ser mantido no resto do app: rótulo direto e correspondência clara entre a intenção do usuário e o destino.",
   },
 ];
 
@@ -134,6 +142,9 @@ function FirstClick() {
                   </span>
                 </div>
                 <p className="fc-leitura">{t.leitura}</p>
+                <p className="fc-implicacao">
+                  <strong>Implicação:</strong> {t.implicacao}
+                </p>
               </div>
             </div>
           ))}

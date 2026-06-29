@@ -1262,6 +1262,21 @@ button:focus-visible {
   margin: 0;
 }
 
+.fc-implicacao {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border-left: 3px solid #818cf8;
+  border-radius: 0 8px 8px 0;
+}
+
+.fc-implicacao strong {
+  color: #4f46e5;
+}
+
 .fc-reco {
   display: flex;
   align-items: center;
